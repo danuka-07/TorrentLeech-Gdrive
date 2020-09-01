@@ -244,7 +244,7 @@ async def call_apropriate_function(
             message_to_send = mention_req_user + message_to_send
             message_to_send = message_to_send + "\n\n" + "#uploads"
         else:
-            message_to_send = "<i>FAILED</i> to upload files. 😞😞"
+            message_to_send = "<i>FAILED</i> to upload files. 🤤🤤"
         await user_message.reply_text(
             text=message_to_send,
             quote=True,
@@ -414,7 +414,7 @@ async def call_apropriate_function_t(
         message_to_send = mention_req_user + message_to_send
         message_to_send = message_to_send + "\n\n" + "#uploads"
     else:
-        message_to_send = "<i>FAILED</i> to upload files. 😞😞"
+        message_to_send = "<i>FAILED</i> to upload files. 🤤🤤"
     await sent_message_to_update_tg_p.reply_to_message.reply_text(
         text=message_to_send,
         quote=True,
@@ -463,7 +463,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 #msg += f"\nGID: <code>{gid}</code>"
                 inline_keyboard = []
                 ikeyboard = []
-                ikeyboard.append(InlineKeyboardButton("Cancel 🚫", callback_data=(f"cancel {gid}").encode("UTF-8")))
+                ikeyboard.append(InlineKeyboardButton("Cancel 🛑", callback_data=(f"cancel {gid}").encode("UTF-8")))
                 inline_keyboard.append(ikeyboard)
                 reply_markup = InlineKeyboardMarkup(inline_keyboard)
                 #msg += reply_markup
