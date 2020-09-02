@@ -224,7 +224,7 @@ async def g_yt_playlist(client, message):
         await yt_playlist_downg(message.reply_to_message, i_m_sefg, G_DRIVE)
     
     else:
-        await message.reply_text("Reply to youtube playlist link only 🚫")
+        await message.reply_text("Reply to youtube playlist link only 🚫👿")
         
  #
 async def g_clonee(client, message):
