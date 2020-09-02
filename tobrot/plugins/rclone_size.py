@@ -19,7 +19,7 @@ from pyrogram.types import (
 
 async def check_size_g(client, message):
     #await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-    del_it = await message.reply_text("🔊 Checking size...wait!!!")
+    del_it = await message.reply_text("🚀 Checking size...wait!!!")
     if not os.path.exists('rclone.conf'):
         #subprocess.Popen(('touch', 'rclone.conf'), stdout = subprocess.PIPE)
         with open('rclone.conf', 'a', newline="\n", encoding = 'utf-8') as fole:
@@ -34,7 +34,7 @@ async def check_size_g(client, message):
     gautam = gau.decode("utf-8")
     print(gautam)
     await asyncio.sleep(5)
-    await message.reply_text(f"🔊CloudInfo:\n\n{gautam}")
+    await message.reply_text(f"🛫CloudInfo:\n\n{gautam}")
     await del_it.delete()
 
 #gautamajay52
@@ -42,7 +42,7 @@ async def check_size_g(client, message):
 async def g_clearme(client, message):
     inline_keyboard = []
     ikeyboard = []
-    ikeyboard.append(InlineKeyboardButton("Yes 🚫", callback_data=("fuckingdo").encode("UTF-8")))
+    ikeyboard.append(InlineKeyboardButton("Yes 🤘", callback_data=("fuckingdo").encode("UTF-8")))
     ikeyboard.append(InlineKeyboardButton("No 🤗", callback_data=("fuckoff").encode("UTF-8")))
     inline_keyboard.append(ikeyboard)
     reply_markup = InlineKeyboardMarkup(inline_keyboard)
