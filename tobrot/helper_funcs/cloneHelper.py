@@ -177,7 +177,7 @@ class CloneHelper:
             
 		
     async def gcl(self):
-        self.lsg = await self.mess.reply_text(f"Cloning...you should wait 🛡")
+        self.lsg = await self.mess.reply_text(f"Cloning...you should wait 🔥")
         destination = f'{DESTINATION_FOLDER}'
         cmd = [
             "/app/gautam/gclone",
