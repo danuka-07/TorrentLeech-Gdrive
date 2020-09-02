@@ -98,8 +98,8 @@ async def upload_to_tg(
             d_f_s = humanbytes(os.path.getsize(local_file_name))
             i_m_s_g = await message.reply_text(
                 "Telegram does not support uploading this file.\n"
-                f"Detected File Size: {d_f_s} 😡\n"
-                "\n🤖 trying to split the files 🌝🌝🌚"
+                f"Detected File Size: {d_f_s} 👾\n"
+                "\n🤖 trying to split the files ⚙🔎🔩"
             )
             splitted_dir = await split_large_files(local_file_name)
             totlaa_sleif = os.listdir(splitted_dir)
@@ -108,7 +108,7 @@ async def upload_to_tg(
             LOGGER.info(totlaa_sleif)
             ba_se_file_name = os.path.basename(local_file_name)
             await i_m_s_g.edit_text(
-                f"Detected File Size: {d_f_s} 😡\n"
+                f"Detected File Size: {d_f_s} 👾\n"
                 f"<code>{ba_se_file_name}</code> splitted into {number_of_files} files.\n"
                 "trying to upload to Telegram, now ..."
             )
@@ -137,7 +137,7 @@ async def upload_to_tg(
 
 async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
     await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-    del_it = await message.edit_text("🔊 Now Uploading to ☁️ Cloud!!!")
+    del_it = await message.edit_text("⚠ Now Uploading to 🌨Cloud!!!")
     #subprocess.Popen(('touch', 'rclone.conf'), stdout = subprocess.PIPE)
     with open('rclone.conf', 'a', newline="\n", encoding = 'utf-8') as fole:
         fole.write("[DRIVE]\n")
@@ -171,16 +171,16 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         gjay = size(os.path.getsize(file_upload))
         LOGGER.info(gjay)
         button = []
-        button.append([pyrogram.InlineKeyboardButton(text="☁️ CloudUrl ☁️", url=f"{gau_link}")])
+        button.append([pyrogram.InlineKeyboardButton(text="⛈ CloudUrl⛈", url=f"{gau_link}")])
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{file_upload}"
             tam_link = requests.utils.requote_uri(indexurl)
             LOGGER.info(tam_link)
-            button.append([pyrogram.InlineKeyboardButton(text="ℹ️ IndexUrl ℹ️", url=f"{tam_link}")])
+            button.append([pyrogram.InlineKeyboardButton(text="🎴 IndexUrl 🎴", url=f"{tam_link}")])
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-        await messa_ge.reply_text(f"🤖: {file_upload} has been Uploaded successfully to your Cloud <a href='tg://user?id={g_id}'>🤒</a>\n📀 Size: {gjay}", reply_markup=button_markup)
-        #await message.edit_text(f"""🤖: {file_upload} has been Uploaded successfully to your cloud 🤒\n\n☁️ Cloud URL:  <a href="{gau_link}">FileLink</a>\nℹ️ Direct URL:  <a href="{tam_link}">IndexLink</a>""")
+        await messa_ge.reply_text(f"🤖: {file_upload} has been Uploaded successfully to your Cloud <a href='tg://user?id={g_id}'>💨</a>\n🎯 Size: {gjay}", reply_markup=button_markup)
+        #await message.edit_text(f"""🤖: {file_upload} has been Uploaded successfully to your cloud 🔥\n\♨ Cloud URL:  <a href="{gau_link}">FileLink</a>\nℹ️ Direct URL:  <a href="{tam_link}">IndexLink</a>""")
         os.remove(file_upload)
         await del_it.delete()
     else:
@@ -214,17 +214,17 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         gjay = size(getFolderSize(file_upload))
         LOGGER.info(gjay)
         button = []
-        button.append([pyrogram.InlineKeyboardButton(text="☁️ CloudUrl ☁️", url=f"{gau_link}")])
+        button.append([pyrogram.InlineKeyboardButton(text="⛈ CloudUrl⛈", url=f"{gau_link}")])
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{file_upload}/"
             tam_link = requests.utils.requote_uri(indexurl)
             LOGGER.info(tam_link)
-            button.append([pyrogram.InlineKeyboardButton(text="ℹ️ IndexUrl ℹ️", url=f"{tam_link}")])
+            button.append([pyrogram.InlineKeyboardButton(text="🎴 IndexUrl 🎴", url=f"{tam_link}")])
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-        await messa_ge.reply_text(f"🤖: Folder has been Uploaded successfully to {tt} in your Cloud <a href='tg://user?id={g_id}'>🤒</a>\n📀 Size: {gjay}", reply_markup=button_markup)
+        await messa_ge.reply_text(f"🤖: Folder has been Uploaded successfully to {tt} in your Cloud <a href='tg://user?id={g_id}'>💨</a>\n🎯 Size: {gjay}", reply_markup=button_markup)
         #await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-        #await messa_ge.reply_text(f"""🤖: Folder has been Uploaded successfully to {tt} in your cloud 🤒\n\n☁️ Cloud URL:  <a href="{gau_link}">FolderLink</a>\nℹ️ Index Url:. <a href="{tam_link}">IndexLink</a>""")
+        #await messa_ge.reply_text(f"""🤖: Folder has been Uploaded successfully to {tt} in your cloud 🔥\n\♨ Cloud URL:  <a href="{gau_link}">FolderLink</a>\nℹ️ Index Url:. <a href="{tam_link}">IndexLink</a>""")
         shutil.rmtree(file_upload)
         await del_it.delete()
         #os.remove('rclone.conf')
