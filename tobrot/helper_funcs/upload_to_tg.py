@@ -137,7 +137,7 @@ async def upload_to_tg(
 
 async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
     await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-    del_it = await message.edit_text("⚠ Now Uploading to 🌨Cloud!!!")
+    del_it = await message.edit_text("⚠ Now Uploading⚠ to 🚁Cloud🚁")
     #subprocess.Popen(('touch', 'rclone.conf'), stdout = subprocess.PIPE)
     with open('rclone.conf', 'a', newline="\n", encoding = 'utf-8') as fole:
         fole.write("[DRIVE]\n")
@@ -171,7 +171,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         gjay = size(os.path.getsize(file_upload))
         LOGGER.info(gjay)
         button = []
-        button.append([pyrogram.InlineKeyboardButton(text="⛈ CloudUrl⛈", url=f"{gau_link}")])
+        button.append([pyrogram.InlineKeyboardButton(text="⛈ CloudUrl ⛈", url=f"{gau_link}")])
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{file_upload}"
             tam_link = requests.utils.requote_uri(indexurl)
